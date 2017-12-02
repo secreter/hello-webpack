@@ -9,16 +9,16 @@ module.exports = merge.strategy({
   plugins: 'append'                   // merge 策略，plugins是数组，不能替换
 })(baseConfig, {
   module: {
-      rules: [
-        {
-          test: /\.css$/,
-          use: [ 'style-loader', 'css-loader' ]
-        },
-        {
-          test: /\.less$/,
-          use: [ 'style-loader', 'css-loader', 'less-loader' ]
-        }
-      ]
+    rules: [
+      {
+        test: /\.css$/,
+        use: [ 'style-loader', 'css-loader' ]
+      },
+      {
+        test: /\.less$/,
+        use: [ 'style-loader', 'css-loader', 'less-loader' ]
+      }
+    ]
   },
   plugins: [
     // 定义全局变量插件
@@ -36,8 +36,9 @@ module.exports = merge.strategy({
     inline: true,                // 实时刷新,
     disableHostCheck: true,      // 禁止同源检查
     port: 9000,                  // 端口
-    publicPath: '/assets/',      // 此路径下的打包文件可在浏览器中访问。存放静态资源
-    contentBase: path.join(__dirname, 'public')
+    // publicPath: 'public'      // 此路径下的打包文件可在浏览器中访问。wepack output
+    publicPath: '/public/'      // 此路径下的打包文件可在浏览器中访问。wepack output
+    // contentBase: path.join(__dirname, 'assets')  // 存放静态资源
         // proxy: {                     //代理
         //     "*": {
         //         target : 'http://localhost:3001',
