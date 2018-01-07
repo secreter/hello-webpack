@@ -11,9 +11,10 @@
   },
   "config": {
     "ghooks": {
-      "pre-commit": " echo 'standard' ",
-      "pre-push": "echo 'hello push'",
-    },
+      "pre-commit": "lint.sh ",
+      "pre-push": "echo 'hello push'"
+    }   
+  },
   "author": "So",
   "license": "ISC",
   "devDependencies": {
